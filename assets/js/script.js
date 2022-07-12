@@ -72,15 +72,18 @@ fetch(queryRequest).then(function(res){
 })}
 
 // DATE AND TIME
-currentDate = moment().format('dddd, MMMM Do YYYY');
-document.getElementById('date').innerText = currentDate;
+setInterval(function timeNow() {
+    currentDate = moment().format('dddd, MMMM do YYYY, h:mm a');
+    document.getElementById('date').innerText = currentDate;
+}, 1000);
 // MOTIVATIONAL QUOTE GENERATOR
 queryURL=(`https://motivational-quote-api.herokuapp.com/quotes`)
 fetch(queryURL).then(function(res) {
     return res.json();
 }).then(function(data) {
     console.log(data);
-    var randomQuote = data[Math.floor(Math.random(data) * data.length)].quote;
+    var randomQuote = data[Math.floor(Math.random(data) * data.length)];
     console.log(randomQuote)
-    document.getElementById('motivQuote').innerText = randomQuote;
+    document.getElementById('motivQuote').innerText = `"${randomQuote.quote}"`;
+    document.getElementById('motivQuotePerson').innerText = `- ${randomQuote.person}`
 });
