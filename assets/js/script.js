@@ -29,17 +29,33 @@ clearStringsBtnEl.addEventListener('click', function clearStrings() {
     localStorage.clear();
 });
 
+
+
+// the var's for the weather function
+
 var currentCity = document.querySelector('.col')
 var firstBtn = document.querySelector('.btn-floating')
 firstBtn.addEventListener("click", getWeather)
 // city var should probably be changed to a var that accepts an input from the user not just a static place  
 var city = 'minneapolis'
 
+
 var key = "70fc742f790b2f13b5074f8768a1b657";
+var currentCity = document.querySelector('#weather')
+var firstBtn = document.querySelector('#inputSub')
 
+// the button to start the weather function
 
+firstBtn.addEventListener("click", function(event){
+    event.preventDefault()
+    getWeather()
+})  
+
+// the function to get the current weather
 function getWeather(){
-var queryRequest =` http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${key}`
+    var city = document.getElementById('cityInput').value
+    console.log(city)
+var queryRequest =` https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${key}`
 //the API request function
 fetch(queryRequest).then(function(res){
     return res .json();
