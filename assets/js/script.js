@@ -71,8 +71,10 @@ fetch(queryRequest).then(function(res){
     })
 })}
 
-
-
+// DATE AND TIME
+currentDate = moment().format('dddd, MMMM Do YYYY');
+document.getElementById('date').innerText = currentDate;
+// MOTIVATIONAL QUOTE GENERATOR
 queryURL=(`https://motivational-quote-api.herokuapp.com/quotes`)
 fetch(queryURL).then(function(res) {
     return res.json();
@@ -81,4 +83,4 @@ fetch(queryURL).then(function(res) {
     var randomQuote = data[Math.floor(Math.random(data) * data.length)].quote;
     console.log(randomQuote)
     document.getElementById('motivQuote').innerText = randomQuote;
-})
+});
