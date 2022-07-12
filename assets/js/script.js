@@ -30,8 +30,6 @@ clearStringsBtnEl.addEventListener('click', function clearStrings() {
     localStorage.clear();
 });
 
-
-
 var currentCity = document.querySelector('.col')
 var firstBtn = document.querySelector('.btn-floating')
 firstBtn.addEventListener("click", getWeather)
