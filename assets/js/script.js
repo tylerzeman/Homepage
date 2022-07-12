@@ -7,8 +7,7 @@ var newStringSubmitEl = document.getElementById('newStringSubmit');
 var stringContainerEl = document.getElementById('stringContainer');
 // ADD A STRING ON CLICK
 newStringSubmitEl.addEventListener('click', addString);
-function addString(event) {
-    // event.preventDefault();
+function addString() {
     var newStringKeyInputEl = document.getElementById('newStringKeyInput');
     var newStringValueInputEl = document.getElementById('newStringValueInput');
     var newStringName = newStringKeyInputEl.value;
