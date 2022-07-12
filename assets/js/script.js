@@ -1,11 +1,11 @@
+// MATERIALIZE
 M.AutoInit();
-
 $(".dropdown-trigger").dropdown();
-
+// FOR ADDING STRINGS
 var containerEl = document.querySelector('.container');
 var newStringSubmitEl = document.getElementById('newStringSubmit');
 var stringContainerEl = document.getElementById('stringContainer')
-// addedStrings = JSON.parse(localStorage.getItem())
+// ADD A STRING ON CLICK
 newStringSubmitEl.addEventListener('click', addString);
 function addString(event) {
     // event.preventDefault();
@@ -15,6 +15,7 @@ function addString(event) {
     var newStringContent = newStringValueInputEl.value;
     localStorage.setItem(newStringName, newStringContent);
 }
+// WRITE LOCALLY STORED STRINGS TO PAGE
 for (i=0; i<localStorage.length; i++) {
     newString = document.createElement('a');
     newString.setAttribute('class', 'btn-floating btn-large waves-effect waves-light red');
@@ -23,6 +24,11 @@ for (i=0; i<localStorage.length; i++) {
     newString.setAttribute('target', '_blank');
     stringContainerEl.appendChild(newString);
 }
+// CLEAR LOCALLY STORED STRONGS
+clearStringsBtnEl = document.getElementById('clearStringsBtn')
+clearStringsBtnEl.addEventListener('click', localStorage.clear())
+
+
 
 var currentCity = document.querySelector('.col')
 var firstBtn = document.querySelector('.btn-floating')
