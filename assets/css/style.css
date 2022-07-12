@@ -12,11 +12,10 @@
 .container {
     border-radius: 25px;
     background-color: rgb(224, 224, 224, 0.75);
+    padding: 80px;
+    text-align: center;
 }
 .row {
-    margin: 100px;
-}
-.anchorAssign {
     margin: 100px;
 }
 .garfield {
