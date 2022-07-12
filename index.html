@@ -32,13 +32,18 @@
   </nav>
   <div class="row">
     <div class="col s4">
-      <h2>Weather</h2>
+      <h2 id="date">Date and Time</h2>
     </div>
     <div class="col s4 offset-s4">
 
-      <h2 id="date">Date</h2>
+      <h2>WEATHER</h2>
 
+      <form>
+        <input type="text" id="cityInput" placeholder="get weather by city name">
+        <button id="inputSub">search</button>
+      </form>
     </div>
+
   </div>
   <div class="container">
     <h4>Click Add a link to save your favorite Links</h4>
@@ -77,7 +82,12 @@
     <div class="garfield">
       <h3>MOTIVATIONAL QUOTES GARFIELD!!!</h3>
       <p id="motivQuote"></p>
+
       <div class="carousel">
+
+      <p id="motivQuotePerson"></p>
+      <div class="carousel">
+
         <a class="carousel-item" href="#one!"><img
             src="https://preview.redd.it/u50n1v5hvtx11.png?auto=webp&s=86c49b17073a34255af286da1ec03ee6d9caf5ef"
             alt="its literally garfield"></a>
@@ -94,6 +104,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="assets/js/script.js"></script>
-    
+
 </body>
 </html>

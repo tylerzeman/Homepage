@@ -7,8 +7,7 @@ var newStringSubmitEl = document.getElementById('newStringSubmit');
 var stringContainerEl = document.getElementById('stringContainer');
 // ADD A STRING ON CLICK
 newStringSubmitEl.addEventListener('click', addString);
-function addString(event) {
-    // event.preventDefault();
+function addString() {
     var newStringKeyInputEl = document.getElementById('newStringKeyInput');
     var newStringValueInputEl = document.getElementById('newStringValueInput');
     var newStringName = newStringKeyInputEl.value;
@@ -32,17 +31,31 @@ clearStringsBtnEl.addEventListener('click', function clearStrings() {
 
 
 
+// the var's for the weather function
+
 var currentCity = document.querySelector('.col')
 var firstBtn = document.querySelector('.btn-floating')
 firstBtn.addEventListener("click", getWeather)
 // city var should probably be changed to a var that accepts an input from the user not just a static place  
 var city = 'minneapolis'
 
+
 var key = "70fc742f790b2f13b5074f8768a1b657";
+var currentCity = document.querySelector('#weather')
+var firstBtn = document.querySelector('#inputSub')
 
+// the button to start the weather function
 
+firstBtn.addEventListener("click", function(event){
+    event.preventDefault()
+    getWeather()
+})  
+
+// the function to get the current weather
 function getWeather(){
-var queryRequest =` http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${key}`
+    var city = document.getElementById('cityInput').value
+    console.log(city)
+var queryRequest =` https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${key}`
 //the API request function
 fetch(queryRequest).then(function(res){
     return res .json();
@@ -72,15 +85,18 @@ fetch(queryRequest).then(function(res){
 })}
 
 // DATE AND TIME
-currentDate = moment().format('dddd, MMMM Do YYYY');
-document.getElementById('date').innerText = currentDate;
+setInterval(function timeNow() {
+    currentDate = moment().format('dddd, MMMM do YYYY, h:mm a');
+    document.getElementById('date').innerText = currentDate;
+}, 1000);
 // MOTIVATIONAL QUOTE GENERATOR
 queryURL=(`https://motivational-quote-api.herokuapp.com/quotes`)
 fetch(queryURL).then(function(res) {
     return res.json();
 }).then(function(data) {
     console.log(data);
-    var randomQuote = data[Math.floor(Math.random(data) * data.length)].quote;
+    var randomQuote = data[Math.floor(Math.random(data) * data.length)];
     console.log(randomQuote)
-    document.getElementById('motivQuote').innerText = randomQuote;
+    document.getElementById('motivQuote').innerText = `"${randomQuote.quote}"`;
+    document.getElementById('motivQuotePerson').innerText = `- ${randomQuote.person}`
 });
