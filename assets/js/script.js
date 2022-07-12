@@ -4,7 +4,7 @@ $(".dropdown-trigger").dropdown();
 // FOR ADDING STRINGS
 var containerEl = document.querySelector('.container');
 var newStringSubmitEl = document.getElementById('newStringSubmit');
-var stringContainerEl = document.getElementById('stringContainer')
+var stringContainerEl = document.getElementById('stringContainer');
 // ADD A STRING ON CLICK
 newStringSubmitEl.addEventListener('click', addString);
 function addString(event) {
@@ -20,13 +20,15 @@ for (i=0; i<localStorage.length; i++) {
     newString = document.createElement('a');
     newString.setAttribute('class', 'btn-floating btn-large waves-effect waves-light red');
     newString.setAttribute('href', localStorage.getItem(localStorage.key(i)));
-    newString.innerHTML = localStorage.key(i)
+    newString.innerHTML = localStorage.key(i);
     newString.setAttribute('target', '_blank');
     stringContainerEl.appendChild(newString);
 }
-// CLEAR LOCALLY STORED STRONGS
-clearStringsBtnEl = document.getElementById('clearStringsBtn')
-clearStringsBtnEl.addEventListener('click', localStorage.clear())
+// CLEAR LOCALLY STORED STRINGS
+clearStringsBtnEl = document.getElementById('clearStringsBtn');
+clearStringsBtnEl.addEventListener('click', function clearStrings() {
+    localStorage.clear();
+});
 
 
 
@@ -69,3 +71,14 @@ fetch(queryRequest).then(function(res){
     })
 })}
 
+
+
+queryURL=(`https://motivational-quote-api.herokuapp.com/quotes`)
+fetch(queryURL).then(function(res) {
+    return res.json();
+}).then(function(data) {
+    console.log(data);
+    var randomQuote = data[Math.floor(Math.random(data) * data.length)].quote;
+    console.log(randomQuote)
+    document.getElementById('motivQuote').innerText = randomQuote;
+})
