@@ -78,9 +78,7 @@ queryURL=(`https://motivational-quote-api.herokuapp.com/quotes`)
 fetch(queryURL).then(function(res) {
     return res.json();
 }).then(function(data) {
-    console.log(data);
     var randomQuote = data[Math.floor(Math.random(data) * data.length)];
-    console.log(randomQuote)
     document.getElementById('motivQuote').innerText = `"${randomQuote.quote}"`;
     document.getElementById('motivQuotePerson').innerText = `- ${randomQuote.person}`
 });
@@ -88,9 +86,8 @@ fetch(queryURL).then(function(res) {
 
 var darkMode= document.getElementById('darkMode');
 var lightMode = document.getElementById('lightMode');
-// var theme3 = document.getElementById('theme3');
+var garfMode = document.getElementById('garfMode');
 var colEl = document.querySelectorAll('.col')
-console.log(colEl)
 
 lightMode.addEventListener('click', function() {
     document.body.style.background = 'rgb(240, 238, 238)'
@@ -101,13 +98,19 @@ lightMode.addEventListener('click', function() {
     }
 })
 
-
 darkMode.addEventListener('click', function() {
     document.body.style.background = 'rgb(77, 73, 73)'
-    console.log(document.body.style.background)
     document.body.style.color = 'rgb(173, 186, 171)'
     document.getElementById('cityInput').style.color = 'rgb(173, 186, 171)'
     for (i=0; i<colEl.length; i++) {
-        colEl[i].style.backgroundColor = 'black';
+        colEl[i].style.backgroundColor = 'rgb(0, 0, 0, 0.75)';
     }
+})
+
+garfMode.addEventListener('click', function() {
+    document.body.style.color = 'rgb(252, 177, 50)'
+    for (i=0; i<colEl.length; i++) {
+        colEl[i].style.backgroundColor = 'rgb(0, 0, 0, 0.75)';
+    }
+    document.body.style.backgroundImage = "url('https://preview.redd.it/u50n1v5hvtx11.png?auto=webp&s=86c49b17073a34255af286da1ec03ee6d9caf5ef')";
 })
