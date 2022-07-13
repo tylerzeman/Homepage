@@ -11,12 +11,8 @@ I Want to see the date/time and weather on my Homepage.
 I want to also be able to place my favorite links to various sites(Amazon, Facebook, and more)
 So that I can have an all in one Homepage instead of a cluttered Bookmark bar for ease of access.
 
-## Mock-Up
-![deployed site image](assets/images/deployedsite.png?raw=true "deployed site image")
-
 ## Screenshot of Webpage
-
-![The Homepage includes Weather, Time/Date, addable link buttons](./Assets/images/)
+![deployed site image](assets/images/deployedsite.png?raw=true "deployed site image")
 
 ## Website Link
 
