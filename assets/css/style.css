@@ -9,21 +9,25 @@
     border-radius: 25px;
     background-color: rgba(224, 224, 224, 0.75); 
 }
+.row {
+    margin: 100px;
+}
+.btn-floating {
+    width: 100px !important;
+    height: 100px !important;
+}
 .container {
     border-radius: 25px;
     background-color: rgb(224, 224, 224, 0.75);
     padding: 80px;
     text-align: center;
 }
-.row {
-    margin: 100px;
-}
 .garfield {
     align-self: center;
     text-align: center;
     border-radius: 25px;
     background-color: rgb(224, 224, 224, 0.75);
-    margin: 75px;
+    margin: 75px 400px;
 }
 
 #inputSub{
@@ -31,4 +35,42 @@
     height: 20px;
     width: 50px;
     border-radius: 6px;
+}
+
+@media screen and (max-width:480px) { 
+    
+    /* Phones */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    #date {
+        font-size: x-large;
+    }
+    #weather {
+        font-size: x-large;
+    }
+    .col {
+       
+        padding: 10px;
+    }
+    .l4 {
+        margin: 15px;
+    }
+    #container {
+        margin: 25px;
+        background-color: red;
+        padding: 25px;
+    }
+    .btn-floating {
+        width: 75px ;
+        height: 75px ;
+        padding: 25px;
+        margin: 3px;
+    }
+    .garfield {
+        padding: 10px;
+       margin: 10px;
+       font-size: large;
+    }
 }
