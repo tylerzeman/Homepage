@@ -21,3 +21,9 @@ So that I can have an all in one Homepage instead of a cluttered Bookmark bar fo
 ## Website Link
 
 https://tylerzeman.github.io/Homepage/
+
+## Pervious mock-ups 
+These were working mock ups made in the design process:  
+
+<img src ="https://github.com/tylerzeman/Homepage/blob/main/assets/images/mockup.jpg" width="500">  
+<img src ="https://github.com/tylerzeman/Homepage/blob/main/assets/images/stringtheoryidea.jpg" width="500">   
