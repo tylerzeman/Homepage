@@ -1,44 +1,33 @@
 // MATERIALIZE
 M.AutoInit();
 $(".dropdown-trigger").dropdown();
-// FOR ADDING STRINGS
-var containerEl = document.querySelector('.container');
-var newStringSubmitEl = document.getElementById('newStringSubmit');
-var stringContainerEl = document.getElementById('stringContainer');
-// ADD A STRING ON CLICK
-newStringSubmitEl.addEventListener('click', addString);
+// ADD A LINK ON CLICK
+document.getElementById('newStringSubmit').addEventListener('click', addString);
 function addString() {
-    var newStringKeyInputEl = document.getElementById('newStringKeyInput');
-    var newStringValueInputEl = document.getElementById('newStringValueInput');
-    var newStringName = newStringKeyInputEl.value;
-    var newStringContent = newStringValueInputEl.value;
+    var newStringName = document.getElementById('newStringKeyInput').value;
+    var newStringContent =document.getElementById('newStringValueInput').value;
     localStorage.setItem(newStringName, newStringContent);
-}
-// WRITE LOCALLY STORED STRINGS TO PAGE
+};
+// WRITE LOCALLY STORED LINKS TO PAGE
 for (i=0; i<localStorage.length; i++) {
     newString = document.createElement('a');
     newString.setAttribute('class', 'btn-floating btn-large waves-effect waves-light red');
     newString.setAttribute('href', localStorage.getItem(localStorage.key(i)));
     newString.innerHTML = localStorage.key(i);
     newString.setAttribute('target', '_blank');
-    stringContainerEl.appendChild(newString);
-}
-// CLEAR LOCALLY STORED STRINGS
-clearStringsBtnEl = document.getElementById('clearStringsBtn');
-clearStringsBtnEl.addEventListener('click', function clearStrings() {
+    document.getElementById('stringContainer').appendChild(newString);
+};
+// CLEAR LOCALLY STORED LINKS
+document.getElementById('clearStringsBtn').addEventListener('click', function clearStrings() {
     localStorage.clear();
 });
-
-
+// DATE AND TIME
+setInterval(function timeNow() {
+    currentDate = moment().format('dddd, MMMM do YYYY, h:mm a');
+    document.getElementById('date').innerText = currentDate;
+}, 100);
 
 // the var's for the weather function
-
-var currentCity = document.querySelector('.col')
-var firstBtn = document.querySelector('.btn-floating')
-firstBtn.addEventListener("click", getWeather)
-// city var should probably be changed to a var that accepts an input from the user not just a static place  
-var city = 'minneapolis'
-
 
 var key = "70fc742f790b2f13b5074f8768a1b657";
 var currentCity = document.querySelector('#weather')
@@ -84,11 +73,6 @@ fetch(queryRequest).then(function(res){
     })
 })}
 
-// DATE AND TIME
-setInterval(function timeNow() {
-    currentDate = moment().format('dddd, MMMM do YYYY, h:mm a');
-    document.getElementById('date').innerText = currentDate;
-}, 1000);
 // MOTIVATIONAL QUOTE GENERATOR
 queryURL=(`https://motivational-quote-api.herokuapp.com/quotes`)
 fetch(queryURL).then(function(res) {
