@@ -110,6 +110,7 @@ darkMode.addEventListener('click', function() {
 
 spaceMode.addEventListener('click', function() {
     document.body.style.color = 'rgb(248, 108, 248)'
+    document.getElementById('cityInput').style.color = 'rgb(173, 186, 171)'
     for (i=0; i<colEl.length; i++) {
         colEl[i].style.backgroundColor = 'rgb(0, 0, 0, 0.5)';
     }
