@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.animation_garf {
+    position: relative;
+    border-style: solid;
+  }
+.just_garf {
+    position: absolute;
+	bottom: 0;
+    animation-name: anim;
+    border-style: solid;
+  }
+
+#just_garf01{
+    animation-delay: 1s;
+}
+#just_garf02{
+    animation-delay: 2s;
+}
+#just_garf03{
+    animation-delay: 3s;
+}
+#just_garf04{
+    animation-delay: 4s;
+}
+#just_garf05{
+    animation-delay: 5s;
+}
+#just_garf06{
+    animation-delay: 6s;
+}
+#just_garf07{
+    animation-delay: 7s;
+}
+#just_garf08{
+    animation-delay: 8s;
+}
+#just_garf09{
+    animation-delay: 9s;
+}
+#just_garf10{
+    animation-delay: 10s;
+}
+#just_garf11{
+    animation-delay: 11s;
+}
+#just_garf12{
+    animation-delay: 12s;
+}
+#just_garf13{
+    animation-delay: 13s;
+}
+#just_garf14{
+    animation-delay: 14s;
+}
+#just_garf15{
+    animation-delay: 15s;
+}
+
+  @keyframes anim {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+
+.body {
+    background-color: rgb(240, 238, 238) !important;
+}
+.col {
+    border-radius: 25px;
+    background-color: rgba(224, 224, 224, 0.75); 
+}
+.row {
+    margin: 100px;
+}
+.btn-floating {
+    width: 100px !important;
+    height: 100px !important;
+}
+.container {
+    border-radius: 25px;
+    background-color: rgb(224, 224, 224, 0.75);
+    padding: 80px;
+    text-align: center;
+}
+.garfield {
+    align-self: center;
+    text-align: center;
+    border-radius: 25px;
+    background-color: rgb(224, 224, 224, 0.75);
+    margin: 75px 400px;
+}
+
+#inputSub{
+    background-color: deeppink;
+    height: 20px;
+    width: 50px;
+    border-radius: 6px;
+}
+
+@media screen and (max-width:480px) { 
+    
+    /* Phones */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    #date {
+        font-size: x-large;
+    }
+    #weather {
+        font-size: x-large;
+    }
+    .col {
+       
+        padding: 10px;
+    }
+    .l4 {
+        margin: 15px;
+    }
+    #container {
+        margin: 25px;
+        background-color: red;
+        padding: 25px;
+    }
+    .btn-floating {
+        width: 75px ;
+        height: 75px ;
+        padding: 25px;
+        margin: 3px;
+    }
+    .garfield {
+        padding: 10px;
+       margin: 10px;
+       font-size: large;
+    }
+}
