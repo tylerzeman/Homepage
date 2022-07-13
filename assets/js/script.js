@@ -29,13 +29,6 @@ setInterval(function timeNow() {
 
 // the var's for the weather function
 
-var currentCity = document.querySelector('.col')
-var firstBtn = document.querySelector('.btn-floating')
-firstBtn.addEventListener("click", getWeather)
-// city var should probably be changed to a var that accepts an input from the user not just a static place  
-var city = 'minneapolis'
-
-
 var key = "70fc742f790b2f13b5074f8768a1b657";
 var currentCity = document.querySelector('#weather')
 var firstBtn = document.querySelector('#inputSub')
