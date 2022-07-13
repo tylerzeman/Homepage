@@ -86,6 +86,7 @@ fetch(queryURL).then(function(res) {
 
 var darkMode= document.getElementById('darkMode');
 var lightMode = document.getElementById('lightMode');
+var spaceMode = document.getElementById('spaceMode')
 var garfMode = document.getElementById('garfMode');
 var colEl = document.querySelectorAll('.col')
 
@@ -105,6 +106,14 @@ darkMode.addEventListener('click', function() {
     for (i=0; i<colEl.length; i++) {
         colEl[i].style.backgroundColor = 'rgb(0, 0, 0, 0.75)';
     }
+})
+
+spaceMode.addEventListener('click', function() {
+    document.body.style.color = 'rgb(248, 108, 248)'
+    for (i=0; i<colEl.length; i++) {
+        colEl[i].style.backgroundColor = 'rgb(0, 0, 0, 0.5)';
+    }
+    document.body.style.backgroundImage = "url('https://www.nasa.gov/sites/default/files/thumbnails/image/main_image_star-forming_region_carina_nircam_final-5mb.jpg')";
 })
 
 garfMode.addEventListener('click', function() {
