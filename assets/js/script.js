@@ -78,9 +78,49 @@ queryURL=(`https://motivational-quote-api.herokuapp.com/quotes`)
 fetch(queryURL).then(function(res) {
     return res.json();
 }).then(function(data) {
-    console.log(data);
     var randomQuote = data[Math.floor(Math.random(data) * data.length)];
-    console.log(randomQuote)
     document.getElementById('motivQuote').innerText = `"${randomQuote.quote}"`;
     document.getElementById('motivQuotePerson').innerText = `- ${randomQuote.person}`
 });
+
+
+var darkMode= document.getElementById('darkMode');
+var lightMode = document.getElementById('lightMode');
+var spaceMode = document.getElementById('spaceMode')
+var garfMode = document.getElementById('garfMode');
+var colEl = document.querySelectorAll('.col')
+
+lightMode.addEventListener('click', function() {
+    document.body.style.background = 'rgb(240, 238, 238)'
+    document.body.style.color = 'black'
+    document.getElementById('cityInput').style.color = 'black'
+    for (i=0; i<colEl.length; i++) {
+        colEl[i].style.backgroundColor = 'rgba(224, 224, 224, 0.75';
+    }
+})
+
+darkMode.addEventListener('click', function() {
+    document.body.style.background = 'rgb(77, 73, 73)'
+    document.body.style.color = 'rgb(173, 186, 171)'
+    document.getElementById('cityInput').style.color = 'rgb(173, 186, 171)'
+    for (i=0; i<colEl.length; i++) {
+        colEl[i].style.backgroundColor = 'rgb(0, 0, 0, 0.75)';
+    }
+})
+
+spaceMode.addEventListener('click', function() {
+    document.body.style.color = 'rgb(248, 108, 248)'
+    document.getElementById('cityInput').style.color = 'rgb(173, 186, 171)'
+    for (i=0; i<colEl.length; i++) {
+        colEl[i].style.backgroundColor = 'rgb(0, 0, 0, 0.5)';
+    }
+    document.body.style.backgroundImage = "url('https://www.nasa.gov/sites/default/files/thumbnails/image/main_image_star-forming_region_carina_nircam_final-5mb.jpg')";
+})
+
+garfMode.addEventListener('click', function() {
+    document.body.style.color = 'rgb(252, 177, 50)'
+    for (i=0; i<colEl.length; i++) {
+        colEl[i].style.backgroundColor = 'rgb(0, 0, 0, 0.75)';
+    }
+    document.body.style.backgroundImage = "url('https://preview.redd.it/u50n1v5hvtx11.png?auto=webp&s=86c49b17073a34255af286da1ec03ee6d9caf5ef')";
+})
